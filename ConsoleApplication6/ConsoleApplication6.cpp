@@ -1,0 +1,75 @@
+// ConsoleApplication5.cpp : Defines the entry point for the console application.
+//
+
+#include "stdafx.h"
+#include <string>
+#include <iostream>
+#include <iomanip>
+using namespace std;
+
+int main()
+{
+	double begbal = 0;
+	double deposit = 0;
+	double withdrawl = 0;
+	double checks = 0;
+	double endbal = 0;
+	char transaction;
+	double input;
+
+	cout << "Please enter an account balance: ";
+	cin >> begbal;
+
+	cout << "Current Balance:" << begbal << endl;
+	do {
+		cout << "Enter Transactions:" << endl;
+
+		cout << "(W)ithdrawl, (D)eposit, (C)heck, (Q)uit: ";
+		cin >> transaction;
+		transaction = toupper(transaction);
+
+		if (transaction != 'W' && transaction != 'C' && transaction != 'D')
+		{
+			cout << "Please only enter, W, D, C or Q" << endl;
+		}
+		switch (transaction)
+		{
+		case 'W':
+			cout << "Please enter Withdrawl Amount: " << endl;
+			cin >> input;
+			withdrawl = withdrawl + input;
+			break;
+
+		case 'D':
+			cout << "Please enter Deposit Amount: " << endl;
+			cin >> input;
+			deposit = deposit + input;
+			break;
+
+		case 'C':
+			cout << "Please enter Check Amount: " << endl;
+			cin >> input;
+			checks = checks + input;
+			break;
+
+		case 'Q':
+			cout << "Transaction Summary:" << endl;
+			cout << setw(30) << "Beginning Balance:" << setw(20) << setprecision(2) << fixed << begbal << endl;
+			cout << setw(30) << "Total Deposits:" << setw(20) << setprecision(2) << fixed << deposit << endl;
+			cout << setw(30) << "Total Checks:" << setw(20) << setprecision(2) << fixed << checks << endl;
+			cout << setw(30) << "Total Withdrawls:" << setw(20) << setprecision(2) << fixed << withdrawl << endl;
+			cout << setw(30) << "Ending Balance:" << setw(20) << setprecision(2) << fixed << begbal + deposit + checks - withdrawl << endl;
+			break;
+		}
+		//    cout << setw(7) << n << endl;
+
+		if (transaction == 'Q')
+		{
+			break;
+		}
+
+	} while (!isdigit(transaction));
+
+	return 0;
+}
+
