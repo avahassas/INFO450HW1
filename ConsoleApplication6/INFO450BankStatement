@@ -54,11 +54,11 @@ int main()
 
 		case 'Q':
 			cout << "Transaction Summary:" << endl;
-			cout << setw(30) << "Beginning Balance:" << setw(20) << setprecision(2) << fixed << begbal << endl;
-			cout << setw(30) << "Total Deposits:" << setw(20) << setprecision(2) << fixed << deposit << endl;
-			cout << setw(30) << "Total Checks:" << setw(20) << setprecision(2) << fixed << checks << endl;
-			cout << setw(30) << "Total Withdrawls:" << setw(20) << setprecision(2) << fixed << withdrawl << endl;
-			cout << setw(30) << "Ending Balance:" << setw(20) << setprecision(2) << fixed << begbal + deposit + checks - withdrawl << endl;
+			cout << setw(30) << "Beginning Balance:" << setw(20) << setprecision(2) << fixed << right << begbal << endl;
+			cout << setw(30) << "Total Deposits:" << setw(20) << setprecision(2) << fixed << right << deposit << endl;
+			cout << setw(30) << "Total Checks:" << setw(20) << setprecision(2) << fixed << right<<  checks << endl;
+			cout << setw(30) << "Total Withdrawls:" << setw(20) << setprecision(2) << fixed << right << withdrawl << endl;
+			cout << setw(30) << "Ending Balance:" << setw(20) << setprecision(2) << fixed << right << begbal + deposit + checks - withdrawl << endl;
 			break;
 		}
 		//    cout << setw(7) << n << endl;
